@@ -14,6 +14,10 @@ namespace DMM.Pages
 {
     public partial class Page_Suppliers : DevExpress.XtraEditors.XtraUserControl
     {
+        // databaseand tables
+        DBDMMEntities db;
+        TB_suppliers tbAdd;
+        int id;
         public Page_Suppliers()
         {
             InitializeComponent();
@@ -38,10 +42,41 @@ namespace DMM.Pages
         {
             DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
             add.id = 0;
-            add.btn_add.Text = "Added";
-            add.btn_addclose.Text = "added and close";
+            add.btn_add.Text = "Add";
+            add.btn_addclose.Text = "Add and close";
             add.page = this;
             add.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+                if(id > 0)
+                {
+                    db = new DBDMMEntities();
+                    tbAdd = db.TB_suppliers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Add_Supplier add = new AddPage.Add_Supplier();
+                    add.id = id;
+                    add.btn_add.Text = "Edit";
+                    add.btn_addclose.Text = "Edit and close";
+                    add.edt_name.Text = tbAdd.FullName;
+                    add.edt_address.Text = tbAdd.Address;
+                    add.edt_phone.Text = tbAdd.Phone;
+                    add.page = this;
+                    add.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There no fiels to update");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

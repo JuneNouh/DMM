@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,7 @@ namespace DMM.AddPage
                 {
                     // Add
                     AddData();
+                    ClearData();
                 }
                 else
                 {
@@ -88,7 +90,30 @@ namespace DMM.AddPage
         // Edit Data
         private void EditData()
         {
+            try
+            {
+                db = new DBDMMEntities();
+                tbAdd = new TB_suppliers
+                {
+                    ID = id,
+                    FullName = edt_name.Text,
+                    Address = edt_address.Text,
+                    Phone = edt_phone.Text,
+                    DateT = DateTime.Now,
 
+
+                };
+
+                db.Set<TB_suppliers>().AddOrUpdate(tbAdd);
+                db.SaveChanges();
+                toastNotificationsManager1.ShowNotification("c13206da-104a-4192-b211-f9a1c4842cef");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
 
 
@@ -97,7 +122,7 @@ namespace DMM.AddPage
         private void btn_add_Click(object sender, EventArgs e)
         {
             Add();
-            ClearData();
+           
         }
         // Add void and close
         private void btn_addclose_Click(object sender, EventArgs e)
@@ -113,7 +138,7 @@ namespace DMM.AddPage
 
         private void edt_phone_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void edt_phone_KeyPress(object sender, KeyPressEventArgs e)
@@ -125,4 +150,3 @@ namespace DMM.AddPage
         }
     }
 }
-

@@ -53,11 +53,11 @@ namespace DMM.Pages
             // 
             this.txt_companytilte.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_companytilte.AutoSize = true;
-            this.txt_companytilte.Font = new System.Drawing.Font("Yu Gothic", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_companytilte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txt_companytilte.Location = new System.Drawing.Point(346, 228);
+            this.txt_companytilte.Font = new System.Drawing.Font("Castellar", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_companytilte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txt_companytilte.Location = new System.Drawing.Point(232, 228);
             this.txt_companytilte.Name = "txt_companytilte";
-            this.txt_companytilte.Size = new System.Drawing.Size(242, 61);
+            this.txt_companytilte.Size = new System.Drawing.Size(468, 96);
             this.txt_companytilte.TabIndex = 0;
             this.txt_companytilte.Text = "WebbLoo";
             this.txt_companytilte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,7 +66,7 @@ namespace DMM.Pages
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(372, 143);
+            this.pictureBox1.Location = new System.Drawing.Point(364, 143);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

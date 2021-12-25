@@ -50,7 +50,7 @@ namespace DMM
             // 
             // pn_container
             // 
-            this.pn_container.Appearance.BackColor = System.Drawing.Color.White;
+            this.pn_container.Appearance.BackColor = System.Drawing.Color.LightSlateGray;
             this.pn_container.Appearance.Options.UseBackColor = true;
             this.pn_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_container.Location = new System.Drawing.Point(198, 29);

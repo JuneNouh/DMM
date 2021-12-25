@@ -122,6 +122,7 @@ namespace DMM.Pages
             this.simpleButton4.Size = new System.Drawing.Size(100, 50);
             this.simpleButton4.TabIndex = 2;
             this.simpleButton4.Text = "Edit";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btn_delete
             // 
