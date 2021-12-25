@@ -136,7 +136,7 @@
         Z+UFQumCVPSvkq/T7RGffP6M9lzdH+p85ne3Pn3EAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="simpleButton6.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_print.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAidJREFUSEvt
         l99O02AYh5t4hDegl4E3YLgJDjzzAMaywZDECbIpdpLwb7LZUQsbDX+j21RGIGGMccAGjASjAho9EQJI
@@ -175,7 +175,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="simpleButton4.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_edit.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAlBJREFUSEtj
         GJbgPwMD4xlPz8yzPj43zgDxWU/PNJAYVJo2oKGhgWleYdXZ62npn7719f3/1tv7/2Zi4ofTnp45UCU0

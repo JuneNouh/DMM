@@ -48,7 +48,7 @@ namespace DMM.Pages
             add.Show();
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
+        private void btn_edit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -74,6 +74,68 @@ namespace DMM.Pages
 
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            var rs = MessageBox.Show("Are you sure you want Delete the data","Delete operation",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                try
+                {
+                    id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+                    if (id > 0)
+                    {
+                        db = new DBDMMEntities();
+                        tbAdd = db.TB_suppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbAdd).State = EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadData();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("There no fiels to delete");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+           
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+                if (id > 0)
+                {
+                    db = new DBDMMEntities();
+                    tbAdd = db.TB_suppliers.Where(x => x.ID == id).FirstOrDefault();
+                    DMM.AddPage.Log_Supplier add = new AddPage.Log_Supplier();
+                    add.txt_id.Text = id.ToString();
+                    add.txt_name.Text = tbAdd.FullName.ToString();
+                    add.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There no fiels to update");
+                }
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

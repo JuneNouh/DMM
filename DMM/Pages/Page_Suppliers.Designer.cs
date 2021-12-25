@@ -31,10 +31,10 @@ namespace DMM.Pages
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Suppliers));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_log = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -55,10 +55,10 @@ namespace DMM.Pages
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.simpleButton7);
-            this.panel1.Controls.Add(this.simpleButton6);
+            this.panel1.Controls.Add(this.btn_log);
+            this.panel1.Controls.Add(this.btn_print);
             this.panel1.Controls.Add(this.btn_update);
-            this.panel1.Controls.Add(this.simpleButton4);
+            this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.btn_delete);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Controls.Add(this.simpleButton1);
@@ -70,31 +70,33 @@ namespace DMM.Pages
             this.panel1.Size = new System.Drawing.Size(1303, 119);
             this.panel1.TabIndex = 0;
             // 
-            // simpleButton7
+            // btn_log
             // 
-            this.simpleButton7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton7.Appearance.Options.UseFont = true;
-            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.simpleButton7.Location = new System.Drawing.Point(905, 38);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(100, 50);
-            this.simpleButton7.TabIndex = 2;
-            this.simpleButton7.Text = "View";
+            this.btn_log.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_log.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Appearance.Options.UseFont = true;
+            this.btn_log.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
+            this.btn_log.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_log.Location = new System.Drawing.Point(905, 38);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(100, 50);
+            this.btn_log.TabIndex = 2;
+            this.btn_log.Text = "View";
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
-            // simpleButton6
+            // btn_print
             // 
-            this.simpleButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.simpleButton6.Location = new System.Drawing.Point(786, 38);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(100, 50);
-            this.simpleButton6.TabIndex = 2;
-            this.simpleButton6.Text = "Print";
+            this.btn_print.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_print.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Appearance.Options.UseFont = true;
+            this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.ImageOptions.Image")));
+            this.btn_print.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_print.Location = new System.Drawing.Point(786, 38);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(100, 50);
+            this.btn_print.TabIndex = 2;
+            this.btn_print.Text = "Print";
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_update
             // 
@@ -110,19 +112,19 @@ namespace DMM.Pages
             this.btn_update.Text = "Update";
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // simpleButton4
+            // btn_edit
             // 
-            this.simpleButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.simpleButton4.Location = new System.Drawing.Point(549, 38);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(100, 50);
-            this.simpleButton4.TabIndex = 2;
-            this.simpleButton4.Text = "Edit";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.btn_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_edit.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.Appearance.Options.UseFont = true;
+            this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
+            this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_edit.Location = new System.Drawing.Point(549, 38);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(100, 50);
+            this.btn_edit.TabIndex = 2;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_delete
             // 
@@ -136,6 +138,7 @@ namespace DMM.Pages
             this.btn_delete.Size = new System.Drawing.Size(100, 50);
             this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_add
             // 
@@ -335,7 +338,12 @@ namespace DMM.Pages
             this.gridView1.AppearancePrint.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.AppearancePrint.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.AppearancePrint.OddRow.BackColor = System.Drawing.Color.White;
+            this.gridView1.AppearancePrint.OddRow.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.AppearancePrint.OddRow.Options.UseBackColor = true;
+            this.gridView1.AppearancePrint.OddRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.OddRow.Options.UseTextOptions = true;
+            this.gridView1.AppearancePrint.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.AppearancePrint.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colFullName,
             this.colPaymentSuppliers,
@@ -419,10 +427,10 @@ namespace DMM.Pages
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_log;
+        private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraEditors.SimpleButton btn_update;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btn_edit;
         private DevExpress.XtraEditors.SimpleButton btn_delete;
         private DevExpress.XtraEditors.SimpleButton btn_add;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
