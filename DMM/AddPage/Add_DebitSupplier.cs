@@ -17,7 +17,7 @@ namespace DMM.AddPage
         // databaseand tables
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
-        public DMM.Pages.Page_Suppliers page;
+        public DMM.AddPage.Log_Supplier page;
 
         // other variable
         public int id;
@@ -54,7 +54,7 @@ namespace DMM.AddPage
                 }
 
                 // Update Data
-                page.LoadData();
+                page.LoadDebitData();
             }
         }
 
@@ -69,7 +69,7 @@ namespace DMM.AddPage
                 tbAdd = new Debit_Suppliers {
 
                     FullName=edt_name.Text,
-                    Debit=Convert.ToDouble(edt_debit),
+                    Debit=Convert.ToDouble(edt_debit.Text),
                     SupplierName = SupplierName,
                     ID_Supplier = SupplierID,
                     DtaeT    = DateTime.Now,
@@ -100,7 +100,7 @@ namespace DMM.AddPage
                 {
                     ID = id,
                     FullName = edt_name.Text,
-                    Debit = Convert.ToDouble(edt_debit),
+                    Debit = Convert.ToDouble(edt_debit.Text),
                     SupplierName = SupplierName,
                     ID_Supplier = SupplierID,
                     DtaeT = DateTime.Now,

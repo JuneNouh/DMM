@@ -45,7 +45,7 @@ namespace DMM.AddPage
         }
 
         
-        private void LoadDebitData()
+        public void LoadDebitData()
         {
             try
             {
@@ -75,6 +75,20 @@ namespace DMM.AddPage
             LoadPaymentData();
             LoadDebitData();
 
+        }
+
+        private void btn_adddebit_Click(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(txt_id.Text);
+            var SupplierName = txt_name.Text;
+            DMM.AddPage.Add_DebitSupplier add = new AddPage.Add_DebitSupplier();
+            add.id = 0;
+            add.btn_add.Text = "Add";
+            add.btn_addclose.Text = "Add and close";
+            add.page = this;
+            add.SupplierID = id;
+            add.SupplierName = SupplierName;
+            add.Show();
         }
     }
 }

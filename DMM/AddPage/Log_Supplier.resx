@@ -270,7 +270,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_edit.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_editdebit.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAlBJREFUSEtj
         GJbgPwMD4xlPz8yzPj43zgDxWU/PNJAYVJo2oKGhgWleYdXZ62npn7719f3/1tv7/2Zi4ofTnp45UCU0
@@ -299,7 +299,7 @@
         34SxtG2KZTAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_add.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_adddebit.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAArRJREFUSEvt
         lm1v0lAUx3mrfgIfXqnxO/jODFqgtAVGS4tzD8btI5j4BYxoNjMXgw9skxBw8+lbLC5k0WUxcZkbY0Y3

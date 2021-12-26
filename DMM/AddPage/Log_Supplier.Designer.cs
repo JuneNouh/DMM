@@ -59,9 +59,9 @@ namespace DMM.AddPage
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_update = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_editdebit = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_adddebit = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,7 +84,7 @@ namespace DMM.AddPage
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Controls.Add(this.simpleButton6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 756);
+            this.panel1.Location = new System.Drawing.Point(0, 758);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1394, 117);
             this.panel1.TabIndex = 0;
@@ -179,7 +179,7 @@ namespace DMM.AddPage
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(653, 756);
+            this.panel2.Size = new System.Drawing.Size(653, 758);
             this.panel2.TabIndex = 1;
             // 
             // panel6
@@ -190,16 +190,16 @@ namespace DMM.AddPage
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(653, 756);
+            this.panel6.Size = new System.Drawing.Size(653, 758);
             this.panel6.TabIndex = 3;
             // 
             // gridControl2
             // 
             this.gridControl2.DataSource = typeof(DMM.PaymentSupplier);
-            this.gridControl2.Location = new System.Drawing.Point(225, 341);
+            this.gridControl2.Location = new System.Drawing.Point(3, 69);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(400, 200);
+            this.gridControl2.Size = new System.Drawing.Size(647, 531);
             this.gridControl2.TabIndex = 3;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -244,7 +244,7 @@ namespace DMM.AddPage
             this.panel5.Controls.Add(this.simpleButton4);
             this.panel5.Controls.Add(this.simpleButton5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 653);
+            this.panel5.Location = new System.Drawing.Point(0, 655);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(653, 103);
             this.panel5.TabIndex = 2;
@@ -324,7 +324,7 @@ namespace DMM.AddPage
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(653, 66);
             this.label2.TabIndex = 1;
-            this.label2.Text = "All Debit";
+            this.label2.Text = "Payed";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -335,16 +335,16 @@ namespace DMM.AddPage
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(653, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(741, 756);
+            this.panel3.Size = new System.Drawing.Size(741, 758);
             this.panel3.TabIndex = 2;
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = typeof(DMM.Debit_Suppliers);
-            this.gridControl1.Location = new System.Drawing.Point(329, 341);
+            this.gridControl1.Location = new System.Drawing.Point(0, 69);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(400, 200);
+            this.gridControl1.Size = new System.Drawing.Size(729, 472);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -397,11 +397,11 @@ namespace DMM.AddPage
             this.panel4.BackColor = System.Drawing.Color.SlateGray;
             this.panel4.Controls.Add(this.btn_print);
             this.panel4.Controls.Add(this.btn_update);
-            this.panel4.Controls.Add(this.btn_edit);
+            this.panel4.Controls.Add(this.btn_editdebit);
             this.panel4.Controls.Add(this.btn_delete);
-            this.panel4.Controls.Add(this.btn_add);
+            this.panel4.Controls.Add(this.btn_adddebit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 653);
+            this.panel4.Location = new System.Drawing.Point(0, 655);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(741, 103);
             this.panel4.TabIndex = 2;
@@ -432,18 +432,18 @@ namespace DMM.AddPage
             this.btn_update.TabIndex = 5;
             this.btn_update.Text = "Update";
             // 
-            // btn_edit
+            // btn_editdebit
             // 
-            this.btn_edit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_edit.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit.Appearance.Options.UseFont = true;
-            this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
-            this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(332, 32);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(100, 50);
-            this.btn_edit.TabIndex = 6;
-            this.btn_edit.Text = "Edit";
+            this.btn_editdebit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_editdebit.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editdebit.Appearance.Options.UseFont = true;
+            this.btn_editdebit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_editdebit.ImageOptions.Image")));
+            this.btn_editdebit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_editdebit.Location = new System.Drawing.Point(332, 32);
+            this.btn_editdebit.Name = "btn_editdebit";
+            this.btn_editdebit.Size = new System.Drawing.Size(100, 50);
+            this.btn_editdebit.TabIndex = 6;
+            this.btn_editdebit.Text = "Edit";
             // 
             // btn_delete
             // 
@@ -458,18 +458,19 @@ namespace DMM.AddPage
             this.btn_delete.TabIndex = 7;
             this.btn_delete.Text = "Delete";
             // 
-            // btn_add
+            // btn_adddebit
             // 
-            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_add.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Appearance.Options.UseFont = true;
-            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
-            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_add.Location = new System.Drawing.Point(85, 30);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(100, 50);
-            this.btn_add.TabIndex = 8;
-            this.btn_add.Text = "Add";
+            this.btn_adddebit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_adddebit.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adddebit.Appearance.Options.UseFont = true;
+            this.btn_adddebit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_adddebit.ImageOptions.Image")));
+            this.btn_adddebit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_adddebit.Location = new System.Drawing.Point(85, 30);
+            this.btn_adddebit.Name = "btn_adddebit";
+            this.btn_adddebit.Size = new System.Drawing.Size(100, 50);
+            this.btn_adddebit.TabIndex = 8;
+            this.btn_adddebit.Text = "Add";
+            this.btn_adddebit.Click += new System.EventHandler(this.btn_adddebit_Click);
             // 
             // label1
             // 
@@ -481,14 +482,14 @@ namespace DMM.AddPage
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(741, 66);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Payed";
+            this.label1.Text = "Debits";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Log_Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 873);
+            this.ClientSize = new System.Drawing.Size(1394, 875);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -522,9 +523,9 @@ namespace DMM.AddPage
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraEditors.SimpleButton btn_update;
-        private DevExpress.XtraEditors.SimpleButton btn_edit;
+        private DevExpress.XtraEditors.SimpleButton btn_editdebit;
         private DevExpress.XtraEditors.SimpleButton btn_delete;
-        private DevExpress.XtraEditors.SimpleButton btn_add;
+        private DevExpress.XtraEditors.SimpleButton btn_adddebit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
