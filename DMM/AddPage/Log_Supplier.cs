@@ -16,7 +16,7 @@ namespace DMM.AddPage
     {
         // databaseand tables
         DBDMMEntities db;
-        TB_suppliers tbAdd;
+        Debit_Suppliers tbAdd;
         int id;
         public Log_Supplier()
         {
@@ -89,6 +89,75 @@ namespace DMM.AddPage
             add.SupplierID = id;
             add.SupplierName = SupplierName;
             add.Show();
+        }
+
+        private void btn_editdebit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+                if (id > 0)
+                {
+                    db = new DBDMMEntities();
+                    var supplierid = Convert.ToInt32(txt_id.Text);
+                    var SupplierName = txt_name.Text;
+                    DMM.AddPage.Add_DebitSupplier add = new AddPage.Add_DebitSupplier();
+                    add.id = id;
+                    add.btn_add.Text = "Edit";
+                    add.btn_addclose.Text = "Edit and close";
+                    add.page = this;
+                    add.SupplierID = supplierid;
+                    add.SupplierName = SupplierName;
+                    add.edt_name.Text = Convert.ToString(gridView1.GetFocusedRowCellValue("FullName"));
+                    add.edt_debit.Text = Convert.ToString(gridView1.GetFocusedRowCellValue("Debit"));
+                    add.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There no fiels to update");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            var rs = MessageBox.Show("Are you sure you want Delete the data", "Delete operation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                try
+                {
+                    id = Convert.ToInt32(gridView1.GetFocusedRowCellValue("ID"));
+                    if (id > 0)
+                    {
+                        db = new DBDMMEntities();
+                        tbAdd = db.Debit_Suppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbAdd).State = EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadDebitData();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("There no fiels to delete");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            gridControl1.ShowRibbonPrintPreview();
         }
     }
 }
