@@ -18,6 +18,7 @@ namespace DMM.AddPage
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
         int id;
+        string paymentValue;
         public Log_Supplier()
         {
             InitializeComponent();
@@ -103,8 +104,8 @@ namespace DMM.AddPage
                     var SupplierName = txt_name.Text;
                     DMM.AddPage.Add_DebitSupplier add = new AddPage.Add_DebitSupplier();
                     add.id = id;
-                    add.btn_add.Text = "Edit";
-                    add.btn_addclose.Text = "Edit and close";
+                    add.btn_add.Text = "Save";
+                    add.btn_addclose.Text = "Save and close";
                     add.page = this;
                     add.SupplierID = supplierid;
                     add.SupplierName = SupplierName;
@@ -158,6 +159,59 @@ namespace DMM.AddPage
         private void btn_print_Click(object sender, EventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_paymentadd_Click(object sender, EventArgs e)
+        {
+            paymentValue = XtraInputBox.Show("Write the sum which you pay", "add payment", "0");
+            if(paymentValue!="0" && paymentValue!= "" )
+            {
+                //make payment
+                MakePayment();
+                LoadPaymentData();
+                MessageBox.Show("Payed successfully");
+
+
+            }
+            else
+            {
+                MessageBox.Show("Write the sum which you pay first");
+            }
+
+        }
+
+        private void MakePayment()
+        {
+            try
+            {
+                db = new DBDMMEntities();
+                id = Convert.ToInt32(txt_id.Text);
+                var SupplierName = txt_name.Text;
+                var tbpayment = new PaymentSupplier
+                {
+
+                    Payment = Convert.ToDouble(paymentValue),
+                    SupplierName = SupplierName,
+                    ID_Supplier = id,
+                    DateT = DateTime.Now,
+
+
+                };
+
+                db.Entry(tbpayment).State = System.Data.Entity.EntityState.Added;
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }
