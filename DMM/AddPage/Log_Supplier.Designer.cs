@@ -46,7 +46,7 @@ namespace DMM.AddPage
             this.panel5 = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_paymentedit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_paymentadd = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@ namespace DMM.AddPage
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Controls.Add(this.simpleButton6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 769);
+            this.panel1.Location = new System.Drawing.Point(0, 770);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1394, 117);
             this.panel1.TabIndex = 0;
@@ -179,7 +179,7 @@ namespace DMM.AddPage
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(653, 769);
+            this.panel2.Size = new System.Drawing.Size(653, 770);
             this.panel2.TabIndex = 1;
             // 
             // panel6
@@ -190,7 +190,7 @@ namespace DMM.AddPage
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(653, 769);
+            this.panel6.Size = new System.Drawing.Size(653, 770);
             this.panel6.TabIndex = 3;
             // 
             // gridControl2
@@ -242,11 +242,11 @@ namespace DMM.AddPage
             this.panel5.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel5.Controls.Add(this.simpleButton1);
             this.panel5.Controls.Add(this.simpleButton2);
-            this.panel5.Controls.Add(this.simpleButton3);
+            this.panel5.Controls.Add(this.btn_paymentedit);
             this.panel5.Controls.Add(this.simpleButton4);
             this.panel5.Controls.Add(this.btn_paymentadd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 666);
+            this.panel5.Location = new System.Drawing.Point(0, 667);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(653, 103);
             this.panel5.TabIndex = 2;
@@ -277,18 +277,19 @@ namespace DMM.AddPage
             this.simpleButton2.TabIndex = 5;
             this.simpleButton2.Text = "Update";
             // 
-            // simpleButton3
+            // btn_paymentedit
             // 
-            this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.simpleButton3.Location = new System.Drawing.Point(288, 32);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(100, 50);
-            this.simpleButton3.TabIndex = 6;
-            this.simpleButton3.Text = "Edit";
+            this.btn_paymentedit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_paymentedit.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_paymentedit.Appearance.Options.UseFont = true;
+            this.btn_paymentedit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btn_paymentedit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_paymentedit.Location = new System.Drawing.Point(288, 32);
+            this.btn_paymentedit.Name = "btn_paymentedit";
+            this.btn_paymentedit.Size = new System.Drawing.Size(100, 50);
+            this.btn_paymentedit.TabIndex = 6;
+            this.btn_paymentedit.Text = "Edit";
+            this.btn_paymentedit.Click += new System.EventHandler(this.btn_paymentedit_Click);
             // 
             // simpleButton4
             // 
@@ -338,7 +339,7 @@ namespace DMM.AddPage
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(653, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(741, 769);
+            this.panel3.Size = new System.Drawing.Size(741, 770);
             this.panel3.TabIndex = 2;
             // 
             // gridControl1
@@ -407,7 +408,7 @@ namespace DMM.AddPage
             this.panel4.Controls.Add(this.btn_delete);
             this.panel4.Controls.Add(this.btn_adddebit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 666);
+            this.panel4.Location = new System.Drawing.Point(0, 667);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(741, 103);
             this.panel4.TabIndex = 2;
@@ -499,7 +500,7 @@ namespace DMM.AddPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 886);
+            this.ClientSize = new System.Drawing.Size(1394, 887);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -546,7 +547,7 @@ namespace DMM.AddPage
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btn_paymentedit;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btn_paymentadd;
         private System.Windows.Forms.Label label2;

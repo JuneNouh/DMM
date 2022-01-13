@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace DMM.AddPage
 {
@@ -18,6 +19,7 @@ namespace DMM.AddPage
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
         int id;
+        int SupplierID;
         string paymentValue;
         public Log_Supplier()
         {
@@ -172,7 +174,7 @@ namespace DMM.AddPage
             if(paymentValue!="0" && paymentValue!= "" )
             {
                 //make payment
-                MakePayment();
+                AddPayment();
                 LoadPaymentData();
                 MessageBox.Show("Payed successfully");
 
@@ -185,25 +187,73 @@ namespace DMM.AddPage
 
         }
 
-        private void MakePayment()
+        private void AddPayment()
         {
             try
             {
                 db = new DBDMMEntities();
-                id = Convert.ToInt32(txt_id.Text);
+                SupplierID = Convert.ToInt32(txt_id.Text);
                 var SupplierName = txt_name.Text;
                 var tbpayment = new PaymentSupplier
                 {
 
                     Payment = Convert.ToDouble(paymentValue),
                     SupplierName = SupplierName,
-                    ID_Supplier = id,
+                    ID_Supplier = SupplierID,
                     DateT = DateTime.Now,
 
 
                 };
 
                 db.Entry(tbpayment).State = System.Data.Entity.EntityState.Added;
+                db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void btn_paymentedit_Click(object sender, EventArgs e)
+        {
+            paymentValue = XtraInputBox.Show("Write the sum which you pay", "add payment", "0");
+            if (paymentValue != "0" && paymentValue != "")
+            {
+                //edit payment
+                EditPayment();
+                LoadPaymentData();
+                MessageBox.Show("Payed successfully");
+
+
+            }
+            else
+            {
+                MessageBox.Show("Write the sum which you pay first");
+            }
+        }
+
+        private void EditPayment()
+        {
+            try
+            {
+                db = new DBDMMEntities();
+                SupplierID = Convert.ToInt32(txt_id.Text);
+                id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
+                var SupplierName = txt_name.Text;
+                var tbpayment = new PaymentSupplier
+                {
+                    ID = id,
+                    Payment = Convert.ToDouble(paymentValue),
+                    SupplierName = SupplierName,
+                    ID_Supplier = SupplierID,
+                    DateT = DateTime.Now,
+
+
+                };
+
+                db.Set<PaymentSupplier>().AddOrUpdate(tbpayment);
                 db.SaveChanges();
 
             }
