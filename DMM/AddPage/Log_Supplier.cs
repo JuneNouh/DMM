@@ -18,6 +18,7 @@ namespace DMM.AddPage
         // databaseand tables
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
+        PaymentSupplier tbpayment;
         int id;
         int SupplierID;
         string paymentValue;
@@ -218,7 +219,9 @@ namespace DMM.AddPage
 
         private void btn_paymentedit_Click(object sender, EventArgs e)
         {
-            paymentValue = XtraInputBox.Show("Write the sum which you pay", "add payment", "0");
+            string CurrValue = Convert.ToString(gridView2.GetFocusedRowCellValue("Payment"));
+
+            paymentValue = XtraInputBox.Show("Write the sum which you pay", "add payment", CurrValue);
             if (paymentValue != "0" && paymentValue != "")
             {
                 //edit payment
@@ -238,23 +241,31 @@ namespace DMM.AddPage
         {
             try
             {
-                db = new DBDMMEntities();
-                SupplierID = Convert.ToInt32(txt_id.Text);
                 id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
-                var SupplierName = txt_name.Text;
-                var tbpayment = new PaymentSupplier
+                if(id>0)
                 {
-                    ID = id,
-                    Payment = Convert.ToDouble(paymentValue),
-                    SupplierName = SupplierName,
-                    ID_Supplier = SupplierID,
-                    DateT = DateTime.Now,
+                    db = new DBDMMEntities();
+                    SupplierID = Convert.ToInt32(txt_id.Text);
+                    var SupplierName = txt_name.Text;
+                    var tbpayment = new PaymentSupplier
+                    {
+                        ID = id,
+                        Payment = Convert.ToDouble(paymentValue),
+                        SupplierName = SupplierName,
+                        ID_Supplier = SupplierID,
+                        DateT = DateTime.Now,
+                    };
 
+                    db.Set<PaymentSupplier>().AddOrUpdate(tbpayment);
+                    db.SaveChanges();
 
-                };
+                }
+                else
+                {
+                    MessageBox.Show("There is no data to Edit");
+                }
 
-                db.Set<PaymentSupplier>().AddOrUpdate(tbpayment);
-                db.SaveChanges();
+                
 
             }
             catch (Exception ex)
@@ -262,6 +273,42 @@ namespace DMM.AddPage
                 MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void btn_paymentdelete_Click(object sender, EventArgs e)
+        {
+            var rs = MessageBox.Show("Are you sure you want Delete the data", "Delete operation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                try
+                {
+                    id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
+                    if (id > 0)
+                    {
+                        db = new DBDMMEntities();
+                        tbpayment = db.PaymentSuppliers.Where(x => x.ID == id).FirstOrDefault();
+                        db.Entry(tbpayment).State = EntityState.Deleted;
+                        db.SaveChanges();
+                        LoadPaymentData();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("There no fiels to delete");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btn_paymentprint_Click(object sender, EventArgs e)
+        {
+            gridControl2.ShowRibbonPrintPreview();
+
         }
     }
 }

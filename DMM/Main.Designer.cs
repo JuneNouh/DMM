@@ -53,6 +53,7 @@ namespace DMM
             this.pn_container.Appearance.BackColor = System.Drawing.Color.LightSlateGray;
             this.pn_container.Appearance.Options.UseBackColor = true;
             this.pn_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_container.Font = new System.Drawing.Font("Calisto MT", 10F);
             this.pn_container.Location = new System.Drawing.Point(198, 29);
             this.pn_container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_container.Name = "pn_container";
@@ -81,12 +82,14 @@ namespace DMM
             // 
             // btn_home
             // 
-            this.btn_home.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_home.Appearance.Hovered.Options.UseFont = true;
             this.btn_home.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_home.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.Appearance.Normal.Options.UseFont = true;
+            this.btn_home.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Appearance.Pressed.Options.UseFont = true;
             this.btn_home.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.ImageOptions.Image")));
             this.btn_home.Name = "btn_home";
             this.btn_home.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -95,12 +98,14 @@ namespace DMM
             // 
             // btn_suppliers
             // 
-            this.btn_suppliers.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suppliers.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_suppliers.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_suppliers.Appearance.Hovered.Options.UseFont = true;
             this.btn_suppliers.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_suppliers.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suppliers.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_suppliers.Appearance.Normal.Options.UseFont = true;
+            this.btn_suppliers.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suppliers.Appearance.Pressed.Options.UseFont = true;
             this.btn_suppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_suppliers.ImageOptions.Image")));
             this.btn_suppliers.Name = "btn_suppliers";
             this.btn_suppliers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -109,12 +114,14 @@ namespace DMM
             // 
             // btn_customers
             // 
-            this.btn_customers.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customers.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_customers.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_customers.Appearance.Hovered.Options.UseFont = true;
             this.btn_customers.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_customers.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customers.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_customers.Appearance.Normal.Options.UseFont = true;
+            this.btn_customers.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customers.Appearance.Pressed.Options.UseFont = true;
             this.btn_customers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_customers.ImageOptions.Image")));
             this.btn_customers.Name = "btn_customers";
             this.btn_customers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -122,12 +129,14 @@ namespace DMM
             // 
             // btn_reports
             // 
-            this.btn_reports.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reports.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reports.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_reports.Appearance.Hovered.Options.UseFont = true;
             this.btn_reports.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_reports.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reports.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reports.Appearance.Normal.Options.UseFont = true;
+            this.btn_reports.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reports.Appearance.Pressed.Options.UseFont = true;
             this.btn_reports.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_reports.ImageOptions.Image")));
             this.btn_reports.Name = "btn_reports";
             this.btn_reports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -135,12 +144,14 @@ namespace DMM
             // 
             // btn_analysis
             // 
-            this.btn_analysis.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_analysis.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_analysis.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_analysis.Appearance.Hovered.Options.UseFont = true;
             this.btn_analysis.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_analysis.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_analysis.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_analysis.Appearance.Normal.Options.UseFont = true;
+            this.btn_analysis.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_analysis.Appearance.Pressed.Options.UseFont = true;
             this.btn_analysis.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_analysis.ImageOptions.Image")));
             this.btn_analysis.Name = "btn_analysis";
             this.btn_analysis.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -148,12 +159,14 @@ namespace DMM
             // 
             // btn_users
             // 
-            this.btn_users.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_users.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_users.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_users.Appearance.Hovered.Options.UseFont = true;
             this.btn_users.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_users.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_users.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_users.Appearance.Normal.Options.UseFont = true;
+            this.btn_users.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_users.Appearance.Pressed.Options.UseFont = true;
             this.btn_users.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_users.ImageOptions.Image")));
             this.btn_users.Name = "btn_users";
             this.btn_users.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -161,12 +174,14 @@ namespace DMM
             // 
             // btn_settings
             // 
-            this.btn_settings.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_settings.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_settings.Appearance.Hovered.Options.UseFont = true;
             this.btn_settings.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_settings.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_settings.Appearance.Normal.Options.UseFont = true;
+            this.btn_settings.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings.Appearance.Pressed.Options.UseFont = true;
             this.btn_settings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_settings.ImageOptions.Image")));
             this.btn_settings.Name = "btn_settings";
             this.btn_settings.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -174,12 +189,14 @@ namespace DMM
             // 
             // btn_about
             // 
-            this.btn_about.Appearance.Hovered.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_about.Appearance.Hovered.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_about.Appearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_about.Appearance.Hovered.Options.UseFont = true;
             this.btn_about.Appearance.Hovered.Options.UseForeColor = true;
-            this.btn_about.Appearance.Normal.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_about.Appearance.Normal.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_about.Appearance.Normal.Options.UseFont = true;
+            this.btn_about.Appearance.Pressed.Font = new System.Drawing.Font("Castellar", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_about.Appearance.Pressed.Options.UseFont = true;
             this.btn_about.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_about.ImageOptions.Image")));
             this.btn_about.Name = "btn_about";
             this.btn_about.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
