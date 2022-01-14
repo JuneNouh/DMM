@@ -67,9 +67,10 @@ namespace DMM.AddPage
                 tbAdd = new TB_suppliers {
 
                     FullName = edt_name.Text,
-                    Address  = edt_address.Text,
-                    Phone    = edt_phone.Text,
-                    DateT    = DateTime.Now,
+                    Address = edt_address.Text,
+                    Phone = edt_phone.Text,
+                    DateT = DateTime.Now,
+                    Debit = 0
                 
                 
                 };

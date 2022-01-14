@@ -24,6 +24,7 @@ namespace DMM.AddPage
         int id;
         int SupplierID;
         string paymentValue;
+
         double Payment;
         double Debit;
         Double PaymentRs;

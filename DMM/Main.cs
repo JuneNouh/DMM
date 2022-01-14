@@ -56,5 +56,12 @@ namespace DMM
             Page_Suppliers page = new Page_Suppliers();
             LoadPage(page);
         }
+
+        private void Main_Activated(object sender, EventArgs e)
+        {
+            BL.UPDATE uPDATE= new BL.UPDATE();
+            uPDATE.SupplierDataUpdate();
+
+        }
     }
 }
