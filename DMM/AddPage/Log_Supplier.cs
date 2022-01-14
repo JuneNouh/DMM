@@ -349,21 +349,28 @@ namespace DMM.AddPage
 
         private async void simpleButton6_Click(object sender, EventArgs e)
         {
-            // Load ...
-            this.Text = "Please wait while Clearing";
-            Thread.Sleep(2000);
+            var rs = MessageBox.Show("Are you sure you want Delete the data forever", "Delete operation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                // Load ...
+                this.Text = "Please wait while Clearing";
+                Thread.Sleep(2000);
 
-            this.Text = "Clearing...";
+                this.Text = "Clearing...";
 
-            // Clear Debit data
-            await Task.Run(() => LogDebitClearrData());
+                // Clear Debit data
+                await Task.Run(() => LogDebitClearrData());
 
-            this.Text = "Clearing Payments...";
-            // Clear Payment data
-            await Task.Run(() => LogPaymentClearrData());
+                this.Text = "Clearing Payments...";
+                // Clear Payment data
+                await Task.Run(() => LogPaymentClearrData());
 
-            MessageBox.Show("All records are Cleared");
-            this.Text = "Suppliers Records";
+                MessageBox.Show("All records are Cleared");
+                this.Text = "Suppliers Records";
+                LoadPaymentData();
+                LoadDebitData();
+            }
+  
         }
 
         //Clear Debit Data

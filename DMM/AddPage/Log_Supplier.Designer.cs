@@ -84,7 +84,7 @@ namespace DMM.AddPage
             this.panel1.Controls.Add(this.txt_name);
             this.panel1.Controls.Add(this.btn_logclear);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 741);
+            this.panel1.Location = new System.Drawing.Point(0, 745);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1755, 183);
             this.panel1.TabIndex = 0;
@@ -102,7 +102,7 @@ namespace DMM.AddPage
             // 
             // txt_paymentrs
             // 
-            this.txt_paymentrs.BackColor = System.Drawing.Color.Red;
+            this.txt_paymentrs.BackColor = System.Drawing.Color.OliveDrab;
             this.txt_paymentrs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_paymentrs.Dock = System.Windows.Forms.DockStyle.Left;
             this.txt_paymentrs.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,18 +160,19 @@ namespace DMM.AddPage
             // 
             this.btn_logclear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_logclear.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btn_logclear.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logclear.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logclear.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_logclear.Appearance.Options.UseBackColor = true;
             this.btn_logclear.Appearance.Options.UseFont = true;
             this.btn_logclear.Appearance.Options.UseForeColor = true;
-            this.btn_logclear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.btn_logclear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btn_logclear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_logclear.ImageOptions.Image")));
             this.btn_logclear.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_logclear.Location = new System.Drawing.Point(1402, 63);
+            this.btn_logclear.Location = new System.Drawing.Point(1428, 63);
             this.btn_logclear.Name = "btn_logclear";
-            this.btn_logclear.Size = new System.Drawing.Size(150, 62);
+            this.btn_logclear.Size = new System.Drawing.Size(258, 69);
             this.btn_logclear.TabIndex = 8;
-            this.btn_logclear.Text = "Clear";
+            this.btn_logclear.Text = "Clear all records";
             this.btn_logclear.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // panel2
@@ -180,7 +181,7 @@ namespace DMM.AddPage
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1020, 741);
+            this.panel2.Size = new System.Drawing.Size(1020, 745);
             this.panel2.TabIndex = 1;
             // 
             // panel6
@@ -191,7 +192,7 @@ namespace DMM.AddPage
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1020, 741);
+            this.panel6.Size = new System.Drawing.Size(1020, 745);
             this.panel6.TabIndex = 3;
             // 
             // gridControl2
@@ -247,7 +248,7 @@ namespace DMM.AddPage
             this.panel5.Controls.Add(this.btn_paymentdelete);
             this.panel5.Controls.Add(this.btn_paymentadd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 638);
+            this.panel5.Location = new System.Drawing.Point(0, 642);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1020, 103);
             this.panel5.TabIndex = 2;
@@ -342,7 +343,7 @@ namespace DMM.AddPage
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(1020, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(735, 741);
+            this.panel3.Size = new System.Drawing.Size(735, 745);
             this.panel3.TabIndex = 2;
             // 
             // gridControl1
@@ -352,7 +353,7 @@ namespace DMM.AddPage
             this.gridControl1.Location = new System.Drawing.Point(0, 66);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(735, 572);
+            this.gridControl1.Size = new System.Drawing.Size(735, 576);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -412,7 +413,7 @@ namespace DMM.AddPage
             this.panel4.Controls.Add(this.btn_delete);
             this.panel4.Controls.Add(this.btn_adddebit);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 638);
+            this.panel4.Location = new System.Drawing.Point(0, 642);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(735, 103);
             this.panel4.TabIndex = 2;
@@ -504,7 +505,7 @@ namespace DMM.AddPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1755, 924);
+            this.ClientSize = new System.Drawing.Size(1755, 928);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
