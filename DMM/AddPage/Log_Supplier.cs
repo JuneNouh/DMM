@@ -19,13 +19,17 @@ namespace DMM.AddPage
         DBDMMEntities db;
         Debit_Suppliers tbAdd;
         PaymentSupplier tbpayment;
+
         int id;
         int SupplierID;
         string paymentValue;
+        double Payment;
+        double Debit;
+        Double PaymentRs;
         public Log_Supplier()
         {
             InitializeComponent();
-           
+
         }
 
         private void simpleButton8_Click(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace DMM.AddPage
 
         }
 
-        
+
         public void LoadDebitData()
         {
             try
@@ -58,7 +62,7 @@ namespace DMM.AddPage
                 gridControl1.DataSource = db.Debit_Suppliers.Where(x => x.ID_Supplier == id).ToList();
             }
             catch { }
-            
+
         }
 
 
@@ -73,7 +77,7 @@ namespace DMM.AddPage
             catch { }
 
         }
-       
+
         private void Log_Supplier_Load(object sender, EventArgs e)
         {
             LoadPaymentData();
@@ -172,7 +176,7 @@ namespace DMM.AddPage
         private void btn_paymentadd_Click(object sender, EventArgs e)
         {
             paymentValue = XtraInputBox.Show("Write the sum which you pay", "add payment", "0");
-            if(paymentValue!="0" && paymentValue!= "" )
+            if (paymentValue != "0" && paymentValue != "")
             {
                 //make payment
                 AddPayment();
@@ -242,7 +246,7 @@ namespace DMM.AddPage
             try
             {
                 id = Convert.ToInt32(gridView2.GetFocusedRowCellValue("ID"));
-                if(id>0)
+                if (id > 0)
                 {
                     db = new DBDMMEntities();
                     SupplierID = Convert.ToInt32(txt_id.Text);
@@ -265,7 +269,7 @@ namespace DMM.AddPage
                     MessageBox.Show("There is no data to Edit");
                 }
 
-                
+
 
             }
             catch (Exception ex)
@@ -309,6 +313,37 @@ namespace DMM.AddPage
         {
             gridControl2.ShowRibbonPrintPreview();
 
+        }
+
+        // Calc betweeb debit and payment
+
+        private void DebitPaymentCal()
+        {
+            try
+            {
+                id = Convert.ToInt32(txt_id.Text);
+                db = new DBDMMEntities();
+                // Get Debit
+                Debit = (Double) db.Debit_Suppliers.Where(x => x.ID_Supplier == id).Select(x => x.Debit).ToArray().Sum();
+                Payment = (Double)db.PaymentSuppliers.Where(x => x.ID_Supplier == id).Select(x => x.Payment).ToArray().Sum();
+                PaymentRs = Debit - Payment;
+                // Sett Data
+                txt_debit.Text= "Debits :" + Debit.ToString();
+                txt_payment.Text = "Payed :" + Payment.ToString();
+                txt_paymentrs.Text = "Remind :" + PaymentRs.ToString();
+
+
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Log_Supplier_Activated(object sender, EventArgs e)
+        {
+            DebitPaymentCal();
         }
     }
 }

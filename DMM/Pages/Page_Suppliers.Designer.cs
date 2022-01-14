@@ -65,9 +65,9 @@ namespace DMM.Pages
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 688);
+            this.panel1.Location = new System.Drawing.Point(0, 713);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1303, 119);
+            this.panel1.Size = new System.Drawing.Size(1303, 94);
             this.panel1.TabIndex = 0;
             // 
             // btn_log
@@ -75,9 +75,9 @@ namespace DMM.Pages
             this.btn_log.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_log.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_log.Appearance.Options.UseFont = true;
-            this.btn_log.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
+            this.btn_log.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_log.ImageOptions.Image")));
             this.btn_log.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_log.Location = new System.Drawing.Point(905, 38);
+            this.btn_log.Location = new System.Drawing.Point(905, 20);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(100, 50);
             this.btn_log.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace DMM.Pages
             this.btn_print.Appearance.Options.UseFont = true;
             this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.ImageOptions.Image")));
             this.btn_print.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_print.Location = new System.Drawing.Point(786, 38);
+            this.btn_print.Location = new System.Drawing.Point(786, 20);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(100, 50);
             this.btn_print.TabIndex = 2;
@@ -105,7 +105,7 @@ namespace DMM.Pages
             this.btn_update.Appearance.Options.UseFont = true;
             this.btn_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.ImageOptions.Image")));
             this.btn_update.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_update.Location = new System.Drawing.Point(667, 38);
+            this.btn_update.Location = new System.Drawing.Point(667, 20);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(100, 50);
             this.btn_update.TabIndex = 2;
@@ -119,7 +119,7 @@ namespace DMM.Pages
             this.btn_edit.Appearance.Options.UseFont = true;
             this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
             this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(549, 38);
+            this.btn_edit.Location = new System.Drawing.Point(549, 20);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(100, 50);
             this.btn_edit.TabIndex = 2;
@@ -133,7 +133,7 @@ namespace DMM.Pages
             this.btn_delete.Appearance.Options.UseFont = true;
             this.btn_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.ImageOptions.Image")));
             this.btn_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_delete.Location = new System.Drawing.Point(427, 35);
+            this.btn_delete.Location = new System.Drawing.Point(427, 17);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(100, 50);
             this.btn_delete.TabIndex = 2;
@@ -147,7 +147,7 @@ namespace DMM.Pages
             this.btn_add.Appearance.Options.UseFont = true;
             this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
             this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_add.Location = new System.Drawing.Point(302, 31);
+            this.btn_add.Location = new System.Drawing.Point(302, 13);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(100, 50);
             this.btn_add.TabIndex = 2;
@@ -187,7 +187,7 @@ namespace DMM.Pages
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1303, 688);
+            this.gridControl1.Size = new System.Drawing.Size(1303, 713);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
