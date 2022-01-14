@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Threading;
 
 namespace DMM.AddPage
 {
@@ -344,6 +345,66 @@ namespace DMM.AddPage
         private void Log_Supplier_Activated(object sender, EventArgs e)
         {
             DebitPaymentCal();
+        }
+
+        private async void simpleButton6_Click(object sender, EventArgs e)
+        {
+            // Load ...
+            this.Text = "Please wait while Clearing";
+            Thread.Sleep(2000);
+
+            this.Text = "Clearing...";
+
+            // Clear Debit data
+            await Task.Run(() => LogDebitClearrData());
+
+            this.Text = "Clearing Payments...";
+            // Clear Payment data
+            await Task.Run(() => LogPaymentClearrData());
+
+            MessageBox.Show("All records are Cleared");
+            this.Text = "Suppliers Records";
+        }
+
+        //Clear Debit Data
+        private void LogDebitClearrData()
+        {
+            // Clear Debit
+            try
+            {
+                id = Convert.ToInt32(txt_id.Text);
+                db = new DBDMMEntities();
+                var Debit_List = db.Debit_Suppliers.Select(x => x.ID).ToArray();
+
+                for(int i=0;i<Debit_List.Length;i++)
+                {
+                    tbAdd = db.Debit_Suppliers.Where(x => x.ID_Supplier == id).FirstOrDefault();
+                    db.Entry(tbAdd).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch { }
+        }
+
+
+        //Clear Debit Data
+        private void LogPaymentClearrData()
+        {
+            // Clear Debit
+            try
+            {
+                id = Convert.ToInt32(txt_id.Text);
+                db = new DBDMMEntities();
+                var Debit_List = db.PaymentSuppliers.Select(x => x.ID).ToArray();
+
+                for (int i = 0; i < Debit_List.Length; i++)
+                {
+                    tbpayment = db.PaymentSuppliers.Where(x => x.ID_Supplier == id).FirstOrDefault();
+                    db.Entry(tbpayment).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch { }
         }
     }
 }
