@@ -101,7 +101,7 @@ namespace DMM.AddPage
                     Address = edt_address.Text,
                     Phone = edt_phone.Text,
                     DateT = DateTime.Now,
-
+                   
 
                 };
 

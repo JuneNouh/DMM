@@ -28,5 +28,8 @@ namespace DMM
         public virtual DbSet<Debit_Suppliers> Debit_Suppliers { get; set; }
         public virtual DbSet<PaymentSupplier> PaymentSuppliers { get; set; }
         public virtual DbSet<TB_suppliers> TB_suppliers { get; set; }
+        public virtual DbSet<Debit_Customer> Debit_Customer { get; set; }
+        public virtual DbSet<PymentCustomer> PymentCustomers { get; set; }
+        public virtual DbSet<TB_Customers> TB_Customers { get; set; }
     }
 }

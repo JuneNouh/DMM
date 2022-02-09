@@ -4,7 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBDMMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBDMMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Debit_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Supplier" Type="int" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="DtaeT" Type="datetime" />
+        </EntityType>
         <EntityType Name="Debit_Suppliers">
           <Key>
             <PropertyRef Name="ID" />
@@ -26,6 +37,27 @@
           <Property Name="Payment" Type="float" />
           <Property Name="DateT" Type="datetime" />
         </EntityType>
+        <EntityType Name="PymentCustomer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Supplier" Type="int" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="Payment" Type="float" />
+          <Property Name="DateT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="DateT" Type="datetime" />
+        </EntityType>
         <EntityType Name="TB_suppliers">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,6 +69,20 @@
           <Property Name="Debit" Type="float" />
           <Property Name="DateT" Type="datetime" />
         </EntityType>
+        <Association Name="FK_Debit_Customer_TB_Customers">
+          <End Role="TB_Customers" Type="Self.TB_Customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Debit_Customer" Type="Self.Debit_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Debit_Customer">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Debit_Suppliers_TB_suppliers">
           <End Role="TB_suppliers" Type="Self.TB_suppliers" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -65,10 +111,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PymentCustomer_TB_Customers">
+          <End Role="TB_Customers" Type="Self.TB_Customers" Multiplicity="0..1" />
+          <End Role="PymentCustomer" Type="Self.PymentCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PymentCustomer">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBDMMModelStoreContainer">
+          <EntitySet Name="Debit_Customer" EntityType="Self.Debit_Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Debit_Suppliers" EntityType="Self.Debit_Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentSuppliers" EntityType="Self.PaymentSuppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PymentCustomer" EntityType="Self.PymentCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Customers" EntityType="Self.TB_Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_suppliers" EntityType="Self.TB_suppliers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Debit_Customer_TB_Customers" Association="Self.FK_Debit_Customer_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="Debit_Customer" EntitySet="Debit_Customer" />
+          </AssociationSet>
           <AssociationSet Name="FK_Debit_Suppliers_TB_suppliers" Association="Self.FK_Debit_Suppliers_TB_suppliers">
             <End Role="TB_suppliers" EntitySet="TB_suppliers" />
             <End Role="Debit_Suppliers" EntitySet="Debit_Suppliers" />
@@ -77,9 +142,12 @@
             <End Role="TB_suppliers" EntitySet="TB_suppliers" />
             <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
           </AssociationSet>
+          <AssociationSet Name="FK_PymentCustomer_TB_Customers" Association="Self.FK_PymentCustomer_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="PymentCustomer" EntitySet="PymentCustomer" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBDMMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -159,7 +227,80 @@
             <End Role="TB_suppliers" EntitySet="TB_suppliers" />
             <End Role="PaymentSuppliers" EntitySet="PaymentSuppliers" />
           </AssociationSet>
+          <EntitySet Name="Debit_Customer" EntityType="DBDMMModel.Debit_Customer" />
+          <EntitySet Name="PymentCustomers" EntityType="DBDMMModel.PymentCustomer" />
+          <EntitySet Name="TB_Customers" EntityType="DBDMMModel.TB_Customers" />
+          <AssociationSet Name="FK_Debit_Customer_TB_Customers" Association="DBDMMModel.FK_Debit_Customer_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="Debit_Customer" EntitySet="Debit_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PymentCustomer_TB_Customers" Association="DBDMMModel.FK_PymentCustomer_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="PymentCustomer" EntitySet="PymentCustomers" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Debit_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Supplier" Type="Int32" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="DtaeT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Customers" Relationship="DBDMMModel.FK_Debit_Customer_TB_Customers" FromRole="Debit_Customer" ToRole="TB_Customers" />
+        </EntityType>
+        <EntityType Name="PymentCustomer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Supplier" Type="Int32" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Payment" Type="Double" />
+          <Property Name="DateT" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TB_Customers" Relationship="DBDMMModel.FK_PymentCustomer_TB_Customers" FromRole="PymentCustomer" ToRole="TB_Customers" />
+        </EntityType>
+        <EntityType Name="TB_Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="DateT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Debit_Customer" Relationship="DBDMMModel.FK_Debit_Customer_TB_Customers" FromRole="TB_Customers" ToRole="Debit_Customer" />
+          <NavigationProperty Name="PymentCustomers" Relationship="DBDMMModel.FK_PymentCustomer_TB_Customers" FromRole="TB_Customers" ToRole="PymentCustomer" />
+        </EntityType>
+        <Association Name="FK_Debit_Customer_TB_Customers">
+          <End Type="DBDMMModel.TB_Customers" Role="TB_Customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBDMMModel.Debit_Customer" Role="Debit_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Debit_Customer">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PymentCustomer_TB_Customers">
+          <End Type="DBDMMModel.TB_Customers" Role="TB_Customers" Multiplicity="0..1" />
+          <End Type="DBDMMModel.PymentCustomer" Role="PymentCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PymentCustomer">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -198,6 +339,41 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Debit" ColumnName="Debit" />
                 <ScalarProperty Name="DateT" ColumnName="DateT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Debit_Customer">
+            <EntityTypeMapping TypeName="DBDMMModel.Debit_Customer">
+              <MappingFragment StoreEntitySet="Debit_Customer">
+                <ScalarProperty Name="DtaeT" ColumnName="DtaeT" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PymentCustomers">
+            <EntityTypeMapping TypeName="DBDMMModel.PymentCustomer">
+              <MappingFragment StoreEntitySet="PymentCustomer">
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Customers">
+            <EntityTypeMapping TypeName="DBDMMModel.TB_Customers">
+              <MappingFragment StoreEntitySet="TB_Customers">
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
