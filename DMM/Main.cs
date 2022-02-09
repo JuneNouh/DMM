@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DMM.Pages;
+using System.Threading.Tasks;
 
 namespace DMM
 {
@@ -57,10 +58,11 @@ namespace DMM
             LoadPage(page);
         }
 
-        private void Main_Activated(object sender, EventArgs e)
+        private async void Main_Activated(object sender, EventArgs e)
         {
             BL.UPDATE uPDATE= new BL.UPDATE();
-            uPDATE.SupplierDataUpdate();
+
+           await Task.Run(()=> uPDATE.SupplierDataUpdate());
 
         }
     }

@@ -43,10 +43,10 @@ namespace DMM.Pages
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPaymentSuppliers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDebit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -346,8 +346,8 @@ namespace DMM.Pages
             this.gridView1.AppearancePrint.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colFullName,
-            this.colPaymentSuppliers,
             this.colPhone,
+            this.colDebit,
             this.colAddress,
             this.colDateT});
             this.gridView1.GridControl = this.gridControl1;
@@ -365,16 +365,6 @@ namespace DMM.Pages
             this.colFullName.VisibleIndex = 0;
             this.colFullName.Width = 94;
             // 
-            // colPaymentSuppliers
-            // 
-            this.colPaymentSuppliers.Caption = "Debits";
-            this.colPaymentSuppliers.FieldName = "PaymentSuppliers";
-            this.colPaymentSuppliers.MinWidth = 25;
-            this.colPaymentSuppliers.Name = "colPaymentSuppliers";
-            this.colPaymentSuppliers.Visible = true;
-            this.colPaymentSuppliers.VisibleIndex = 1;
-            this.colPaymentSuppliers.Width = 94;
-            // 
             // colPhone
             // 
             this.colPhone.Caption = "Phone Number";
@@ -382,7 +372,7 @@ namespace DMM.Pages
             this.colPhone.MinWidth = 25;
             this.colPhone.Name = "colPhone";
             this.colPhone.Visible = true;
-            this.colPhone.VisibleIndex = 2;
+            this.colPhone.VisibleIndex = 1;
             this.colPhone.Width = 94;
             // 
             // colAddress
@@ -392,7 +382,7 @@ namespace DMM.Pages
             this.colAddress.MinWidth = 25;
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 3;
+            this.colAddress.VisibleIndex = 2;
             this.colAddress.Width = 94;
             // 
             // colDateT
@@ -402,8 +392,19 @@ namespace DMM.Pages
             this.colDateT.MinWidth = 25;
             this.colDateT.Name = "colDateT";
             this.colDateT.Visible = true;
-            this.colDateT.VisibleIndex = 4;
+            this.colDateT.VisibleIndex = 3;
             this.colDateT.Width = 94;
+            // 
+            // colDebit
+            // 
+            this.colDebit.Caption = "Debits";
+            this.colDebit.FieldName = "Debit";
+            this.colDebit.MinWidth = 25;
+            this.colDebit.Name = "colDebit";
+            this.colDebit.OptionsColumn.AllowEdit = false;
+            this.colDebit.Visible = true;
+            this.colDebit.VisibleIndex = 4;
+            this.colDebit.Width = 94;
             // 
             // Page_Suppliers
             // 
@@ -437,9 +438,9 @@ namespace DMM.Pages
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraGrid.Columns.GridColumn colFullName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPaymentSuppliers;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colDateT;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebit;
     }
 }

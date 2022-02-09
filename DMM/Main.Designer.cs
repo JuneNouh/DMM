@@ -54,10 +54,10 @@ namespace DMM
             this.pn_container.Appearance.Options.UseBackColor = true;
             this.pn_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_container.Font = new System.Drawing.Font("Calisto MT", 10F);
-            this.pn_container.Location = new System.Drawing.Point(198, 29);
+            this.pn_container.Location = new System.Drawing.Point(310, 29);
             this.pn_container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_container.Name = "pn_container";
-            this.pn_container.Size = new System.Drawing.Size(872, 686);
+            this.pn_container.Size = new System.Drawing.Size(760, 686);
             this.pn_container.TabIndex = 0;
             // 
             // accordionControl1
@@ -76,7 +76,7 @@ namespace DMM
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(198, 686);
+            this.accordionControl1.Size = new System.Drawing.Size(310, 686);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
