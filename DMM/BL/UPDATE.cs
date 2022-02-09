@@ -38,7 +38,7 @@ namespace DMM.BL
                     tBSuppliers = db.TB_suppliers.Where(x => x.ID == id).FirstOrDefault();
                     tBSuppliers.Debit = PaymentRs;
                     db.Entry(tBSuppliers).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
+                    db.SaveChanges(); 
                     
                    
 
