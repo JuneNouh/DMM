@@ -65,5 +65,11 @@ namespace DMM
            await Task.Run(()=> uPDATE.SupplierDataUpdate());
 
         }
+
+        private void btn_customers_Click(object sender, EventArgs e)
+        {
+            Page_Customer page = new Page_Customer();
+            LoadPage(page);
+        }
     }
 }

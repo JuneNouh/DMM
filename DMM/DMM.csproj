@@ -64,17 +64,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPage\Add_DebitCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Add_DebitCustomer.Designer.cs">
+      <DependentUpon>Add_DebitCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\Add_DebitSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPage\Add_DebitSupplier.Designer.cs">
       <DependentUpon>Add_DebitSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\Add_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Add_Customer.Designer.cs">
+      <DependentUpon>Add_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\Add_Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPage\Add_Supplier.Designer.cs">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPage\Log_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPage\Log_Customer.Designer.cs">
+      <DependentUpon>Log_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="AddPage\Log_Supplier.cs">
       <SubType>Form</SubType>
@@ -113,6 +131,12 @@
     <Compile Include="Pages\Page_Home.Designer.cs">
       <DependentUpon>Page_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Page_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Page_Customer.Designer.cs">
+      <DependentUpon>Page_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Page_Suppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,11 +151,20 @@
     <Compile Include="TB_suppliers.cs">
       <DependentUpon>MDMM.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPage\Add_DebitCustomer.resx">
+      <DependentUpon>Add_DebitCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Add_DebitSupplier.resx">
       <DependentUpon>Add_DebitSupplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\Add_Customer.resx">
+      <DependentUpon>Add_Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPage\Log_Customer.resx">
+      <DependentUpon>Log_Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPage\Log_Supplier.resx">
       <DependentUpon>Log_Supplier.cs</DependentUpon>
@@ -141,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Home.resx">
       <DependentUpon>Page_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Page_Customer.resx">
+      <DependentUpon>Page_Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Page_Suppliers.resx">
       <DependentUpon>Page_Suppliers.cs</DependentUpon>
